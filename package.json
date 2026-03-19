@@ -10,12 +10,14 @@
     "start:prod": "node dist/main"
   },
   "dependencies": {
+    "@nestjs/apollo": "^12.2.2",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/graphql": "^12.0.0",
     "@nestjs/mongoose": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "graphql": "^16.8.0",
+    "graphql-upload": "^14.0.0",
     "mongoose": "^8.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0"

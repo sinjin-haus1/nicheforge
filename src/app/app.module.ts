@@ -3,7 +3,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { MongooseModule } from '@nestjs/mongoose';
 import { join } from 'path';
-import { NicheModule } from './modules/niche/niche.module';
+import { NicheModule } from '../modules/niche/niche.module';
 
 @Module({
   imports: [

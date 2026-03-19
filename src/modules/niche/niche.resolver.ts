@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Args, ID } from '@nestjs/graphql';
 import { NicheService } from './niche.service';
-import { Niche, NicheInput } from './niche.dto';
+import { Niche, NicheInput, CompetitionAnalysis, RevenueEstimate } from './niche.dto';
 
 @Resolver(() => Niche)
 export class NicheResolver {
@@ -29,6 +29,16 @@ export class NicheResolver {
   @Query(() => [Niche])
   async trendingFaceless(): Promise<Niche[]> {
     return this.nicheService.getTrendingForFaceless();
+  }
+
+  @Query(() => CompetitionAnalysis)
+  async analyzeCompetition(@Args('nicheId', { type: () => ID }) nicheId: string): Promise<CompetitionAnalysis> {
+    return this.nicheService.analyzeCompetition(nicheId);
+  }
+
+  @Query(() => RevenueEstimate)
+  async estimateRevenue(@Args('nicheId', { type: () => ID }) nicheId: string): Promise<RevenueEstimate> {
+    return this.nicheService.estimateRevenue(nicheId);
   }
 
   @Mutation(() => Niche)
