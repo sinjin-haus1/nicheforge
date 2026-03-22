@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
+import Link from 'next/link';
 import {
   Container,
   Typography,
@@ -23,6 +24,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 const GET_NICHES = gql`
   query GetNiches {
@@ -158,6 +160,11 @@ export default function Home() {
           >
             {showTrending ? 'All Niches' : 'Trending'}
           </Button>
+          <Link href="/hooks" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Button color="inherit" startIcon={<AutoAwesomeIcon />}>
+              Hook Generator
+            </Button>
+          </Link>
         </Toolbar>
       </AppBar>
 

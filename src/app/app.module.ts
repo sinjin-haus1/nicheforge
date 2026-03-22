@@ -4,12 +4,13 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { MongooseModule } from '@nestjs/mongoose';
 import { join } from 'path';
 import { NicheModule } from '../modules/niche/niche.module';
+import { HooksModule } from '../modules/hooks/hooks.module';
 
 @Module({
   imports: [
     // MongoDB - configure via MONGODB_URI env var
     MongooseModule.forRoot(process.env.MONGODB_URI || 'mongodb://localhost:27017/nicheforge'),
-    
+
     // GraphQL
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
@@ -17,9 +18,10 @@ import { NicheModule } from '../modules/niche/niche.module';
       sortSchema: true,
       playground: true,
     }),
-    
+
     // Modules
     NicheModule,
+    HooksModule,
   ],
 })
 export class AppModule {}
