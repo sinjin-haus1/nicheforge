@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import Link from 'next/link';
+import { AuthButton } from '../components/AuthButton';
 import {
   Container,
   Typography,
@@ -165,6 +166,7 @@ export default function Home() {
               Hook Generator
             </Button>
           </Link>
+          <AuthButton />
         </Toolbar>
       </AppBar>
 
